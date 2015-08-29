@@ -1,6 +1,9 @@
 {% extends '::base.html.twig' %}
 {% block body %}
 <div class="container puzzle">
-    
+    {% for escultura in esculturas %}
+    	{#{ escultura|ladybug_dump }#}
+    	{{ escultura["imgUrl"] }}
+    {% endfor %}	
 </div>
 {% endblock %}

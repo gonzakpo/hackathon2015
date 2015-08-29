@@ -19,7 +19,7 @@ class DefaultController extends Controller
     //lamo a la funcion traerNodos
     $esculturas = $this->traerNodos();
     //un numero random
-    $escultura = $esculturas[rand(0, 50)];
+    $escultura = $esculturas[rand(0,10)];
 
     return $this->render('AppBundle::Puzzle/puzzle.html.twig', array(
         'escultura' => $escultura,
@@ -43,7 +43,7 @@ class DefaultController extends Controller
 
     public function traerNodos(){
         //segun la url traigo 50 nodos
-        $url = 'http://www.resistenciarte.org/api/v1/node?pagesize=20';
+        $url = 'http://www.resistenciarte.org/api/v1/node?parameters[type]=escultura';
         //Hago una request de la url
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -58,7 +58,6 @@ class DefaultController extends Controller
         foreach ($data as $key => $nodo) {
             //pregunto si el nodo es de tipo esculturas
             //puede haber autores o otros tipos
-            if ($nodo["type"] == "escultura"){
                 //seteo las variables en caso de que tengo algo null
                 $titulo = "no dispone titulo";
                 $tipo = "desconocido";
@@ -99,7 +98,6 @@ http://www.resistenciarte.org/sites/resistenciarte.org/files/" . $escultura["fie
                     'mapa' => $mapa,
                 );
                 $count = $count + 1;
-            }
         }
 
         return $arrayEsculturas;

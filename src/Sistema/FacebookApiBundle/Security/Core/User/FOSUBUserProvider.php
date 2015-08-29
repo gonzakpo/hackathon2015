@@ -51,6 +51,7 @@ class FOSUBUserProvider extends BaseClass
             $user = $this->userManager->findUserBy(array('email' => $email));
             if (null === $user) {
                 $email = "facebook@facebook.com";
+                $username = "facebook";
                 $user = $this->userManager->createUser();
                 $user->setUsername($email);
                 $user->setEmail($email);

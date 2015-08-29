@@ -1,0 +1,139 @@
+entityName: 'Post'
+entity: 'AppBundle\Entity\Post'
+repository: 'AppBundle:Post'
+index: 'post'
+new: 'post_new'
+edit: 'post_edit'
+show: 'post_show'
+create: 'post_create'
+update: 'post_update'
+delete: 'post_delete'
+export: 'post_export'
+sessionFilter: 'PostControllerFilter'
+fieldsindex:    
+    a.id:
+        label: 'Id'
+        name: 'Id'
+        type: 'integer'
+        export: true    
+    a.booleano:
+        label: 'Booleano'
+        name: 'Booleano'
+        type: 'boolean'
+        export: true    
+    a.entero:
+        label: 'Entero'
+        name: 'Entero'
+        type: 'integer'
+        export: true    
+    a.smallEntero:
+        label: 'Smallentero'
+        name: 'Smallentero'
+        type: 'smallint'
+        export: true    
+    a.bigEntero:
+        label: 'Bigentero'
+        name: 'Bigentero'
+        type: 'bigint'
+        export: true    
+    a.cadena:
+        label: 'Cadena'
+        name: 'Cadena'
+        type: 'string'
+        export: true    
+    a.texto:
+        label: 'Texto'
+        name: 'Texto'
+        type: 'text'
+        export: true    
+    a.fechatiempo:
+        label: 'Fechatiempo'
+        name: 'Fechatiempo'
+        type: 'datetime'
+        date: 'Y-m-d H:i:s'
+        export: true    
+    a.dechatiempoz:
+        label: 'Dechatiempoz'
+        name: 'Dechatiempoz'
+        type: 'datetimetz'
+        date: 'Y-m-d H:i:s'
+        export: true    
+    a.fecha:
+        label: 'Fecha'
+        name: 'Fecha'
+        type: 'date'
+        date: 'Y-m-d'
+        export: true    
+    a.tiempo:
+        label: 'Tiempo'
+        name: 'Tiempo'
+        type: 'time'
+        date: 'H:i:s'
+        export: true    
+    a.numerodecimal:
+        label: 'Numerodecimal'
+        name: 'Numerodecimal'
+        type: 'decimal'
+        export: true    
+    a.numeroconcoma:
+        label: 'Numeroconcoma'
+        name: 'Numeroconcoma'
+        type: 'float'
+        export: true
+fieldsshow:
+    a.id:
+        label: 'Id'
+        name: 'Id'
+        type: 'integer'
+    a.booleano:
+        label: 'Booleano'
+        name: 'Booleano'
+        type: 'boolean'
+    a.entero:
+        label: 'Entero'
+        name: 'Entero'
+        type: 'integer'
+    a.smallEntero:
+        label: 'Smallentero'
+        name: 'Smallentero'
+        type: 'smallint'
+    a.bigEntero:
+        label: 'Bigentero'
+        name: 'Bigentero'
+        type: 'bigint'
+    a.cadena:
+        label: 'Cadena'
+        name: 'Cadena'
+        type: 'string'
+    a.texto:
+        label: 'Texto'
+        name: 'Texto'
+        type: 'text'
+    a.fechatiempo:
+        label: 'Fechatiempo'
+        name: 'Fechatiempo'
+        type: 'datetime'
+        date: 'Y-m-d H:i:s'
+    a.dechatiempoz:
+        label: 'Dechatiempoz'
+        name: 'Dechatiempoz'
+        type: 'datetimetz'
+        date: 'Y-m-d H:i:s'
+    a.fecha:
+        label: 'Fecha'
+        name: 'Fecha'
+        type: 'date'
+        date: 'Y-m-d'
+    a.tiempo:
+        label: 'Tiempo'
+        name: 'Tiempo'
+        type: 'time'
+        date: 'H:i:s'
+    a.numerodecimal:
+        label: 'Numerodecimal'
+        name: 'Numerodecimal'
+        type: 'decimal'
+    a.numeroconcoma:
+        label: 'Numeroconcoma'
+        name: 'Numeroconcoma'
+        type: 'float'

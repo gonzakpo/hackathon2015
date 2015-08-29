@@ -1,0 +1,8 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+mw_simple_admin_crud:
+    resource: "@MWSimpleAdminCrudBundle/Controller/"
+    type:     annotation
+    prefix:   /admin

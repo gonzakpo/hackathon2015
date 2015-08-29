@@ -10,12 +10,12 @@
             {% endstylesheets %}
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body class="red lighten-4">
-            {% block body %}{% endblock %}
         {% block javascripts %}
             <script src="{{ asset('bundles/app/vendor/jquery-1.11.3.min.js') }}"></script>
             <script src="{{ asset('bundles/app/materialize-src/js/bin/materialize.min.js') }}"></script>
         {% endblock %}
+    </head>
+    <body class="red lighten-4">
+            {% block body %}{% endblock %}
     </body>
 </html>

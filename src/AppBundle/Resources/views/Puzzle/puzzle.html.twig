@@ -1,5 +1,6 @@
 {% extends '::base.html.twig' %}
 {% block body %}
+<<<<<<< HEAD
 <div class="container puzzle">
     {% for escultura in esculturas %}
     	{#{ escultura|ladybug_dump }#}
@@ -16,5 +17,52 @@
     	Termina
     	<br></br>
     {% endfor %}	
+=======
+<div class="container puzzle darken-1">
+    <div class="row purple lighten-3 darken-1">
+        <div class="card purple lighten-3  darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">Card Title</span>
+                <p>
+                    <img id="rompecabezas" onLoad="snapfit.add(this);" width="163" height="310" src="img/pajaro.jpg">
+                </p>
+            </div>
+            <div class="card-action">
+                <a href="#" id="resolve">Resolver</a>
+                <a href="#">This is a link</a>
+            </div>
+        </div>
+    </div>
+>>>>>>> 99b596247fb580f053944bac55f5f7f55ec1266e
 </div>
+    <script src="vendor/snapfit.js"></script>
+
+    <script>
+        (function(){
+            var image = $('#rompecabezas');
+            var options = {
+                aopacity:0.0001,
+                mixed:true,
+                simple: true
+            };
+
+            snapfit.add(image, options);
+
+            $('#resolve').click(function(){
+                snapfit.solve(image);
+            });
+            ajax();
+
+        })();
+
+        function ajax(){
+            $.ajax({
+                type: 'GET',
+                url: 'http://resistenciarte.org/api/v1/node?page=40',
+                dataType: 'json',
+                crossDomain: true,
+            });
+        }
+
+    </script>
 {% endblock %}

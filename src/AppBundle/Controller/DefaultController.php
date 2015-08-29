@@ -21,7 +21,7 @@ class DefaultController extends Controller
     	ladybug_dump_die($esculturas);
 		//var_dump($nds);
 		//die();
-        return $this->render('default/index.html.twig' array(
+        return $this->render('AppBundle::Puzzle/puzzle.html.twig' array(
             'esculturas' => $esculturas,
             );
     }

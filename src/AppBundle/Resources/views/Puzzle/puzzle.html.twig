@@ -1,6 +1,22 @@
 {% extends '::base.html.twig' %}
 {% block body %}
-<div class="container puzzle">
-    
+<div class="container puzzle darken-1">
+    <div class="row purple lighten-3 darken-1">
+        <div class="card purple lighten-3  darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">Card Title</span>
+                <p>
+                    <img id="img" data-url="{{ path('esculturas') }}" width="163" height="310" src="{{ escultura.imgUrl }}">
+                </p>
+            </div>
+            <div class="card-action">
+                <a data-img="img" id="resolve" class="waves-effect waves-light btn">
+                    <i class="material-icons right"></i>Resolver
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
-{% endblock %}
+    <script src="bundles/app/js/rompecabezas.js"></script>
+    <script src="bundles/app/vendor/snapfit.js"></script>
+  {% endblock %}

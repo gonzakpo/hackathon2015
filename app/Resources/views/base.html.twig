@@ -11,11 +11,11 @@
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body>
+    <body class="red lighten-4">
             {% block body %}{% endblock %}
         {% block javascripts %}
             {% javascripts
-            '@AppBundle/Resources/public/libs/jquery-1.11.3.min.js'
+            '@AppBundle/Resources/public/vendor/jquery-1.11.3.min.js'
             '@AppBundle/Resources/public/materialize-src/js/*'
             %}{% endjavascripts %}
         {% endblock %}

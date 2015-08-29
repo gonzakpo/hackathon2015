@@ -17,7 +17,7 @@ security:
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
                 always_use_default_target_path: true
-                default_target_path: miweb
+                default_target_path: esculturas
                 provider: fos_userbundle        
                 csrf_provider: form.csrf_provider
                 #post_only: true
@@ -35,9 +35,9 @@ security:
             anonymous:    true
             oauth:
                 resource_owners:
-                    facebook:           "/login/check-facebook"
+                    facebook:      "/login/check-facebook"
                 login_path:        /login
-                default_target_path: miweb
+                default_target_path: esculturas
                 failure_path:      /login
                 oauth_user_provider:
                     service:    mws_user_provider

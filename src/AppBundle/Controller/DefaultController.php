@@ -18,10 +18,7 @@ class DefaultController extends Controller
     {
     	$esculturas = $this->traerNodos();
     	
-    	//ladybug_dump_die($esculturas);
-		//var_dump($nds);
-		//die();
-        return $this->render('AppBundle::Puzzle/puzzle.html.twig', array(
+    	return $this->render('AppBundle::Puzzle/puzzle.html.twig', array(
             	'esculturas' => $esculturas,
             )
         );
@@ -46,7 +43,6 @@ class DefaultController extends Controller
     			$ubicacion = "desconocida";
     			$material = "desconocido";
     			$autor = "desconocido";
-    			$premios = "no tiene";
     			$anio = "desconocido";
     			$mapa = array(
     				'lat' => "-",
@@ -54,12 +50,17 @@ class DefaultController extends Controller
     			);
     			$foto = "no existe";
     			$escultura = $this->traerEscultura($nodo["uri"]);
-    			//ladybug_dump_die($escultura["field_fotos"]);
     			if ($escultura["title"]){
     				$titulo = $escultura["title"];
     			}
     			if ($escultura["field_tipo"]["und"][0]["tid"]){
     				$tipo = $this->infoTid($escultura["field_tipo"]["und"][0]["tid"]); 
+    			}
+    			if ($escultura["field_material"]["und"][0]["tid"]){
+    				$material = $this->infoTid($escultura["field_material"]["und"][0]["tid"]); 
+    			}
+    			if ($escultura["field_ubicacion"]["und"][0]["value"]){
+    				$ubicacion = $this->infoTid($escultura["field_ubicacion"]["und"][0]["value"]); 
     			}
     			if ($escultura["field_fotos"]["und"][0]["filename"]){
     				$foto = "
@@ -68,6 +69,12 @@ http://www.resistenciarte.org/sites/resistenciarte.org/files/" . $escultura["fie
     			$arrayEsculturas[$key] = array(
     				'titulo' => $titulo,
     				'imgUrl' => $foto,
+    				'tipo' => $tipo,
+    				'ubicacion' => $ubicacion,
+    				'material' => $material,
+    				'autor' => $autor,
+    				'anio' => $anio,
+    				'mapa' => $mapa,
     			);
     		}
     	}
@@ -85,8 +92,7 @@ http://www.resistenciarte.org/sites/resistenciarte.org/files/" . $escultura["fie
 		$response = curl_exec($ch);
     	$data = json_decode($response, true);
     	
-    	$laData = $data["name"];
-    	return $laData;
+    	return $data;
     }
 
     public function infoTid($tid){
@@ -100,6 +106,7 @@ http://www.resistenciarte.org/sites/resistenciarte.org/files/" . $escultura["fie
 		$response = curl_exec($ch);
     	$data = json_decode($response, true);
     	
-    	return $data;
+    	$laData = $data["name"];
+    	return $laData;
     }
 }

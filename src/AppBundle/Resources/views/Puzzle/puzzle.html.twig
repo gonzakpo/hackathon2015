@@ -3,7 +3,18 @@
 <div class="container puzzle">
     {% for escultura in esculturas %}
     	{#{ escultura|ladybug_dump }#}
-    	{{ escultura["imgUrl"] }}
+    	Empieza
+    	<div>Titulo: {{ escultura["titulo"] }}</div>
+    	<div>Imagen: {{ escultura["imgUrl"] }}</div>
+    	<div>Tipo: {{ escultura["tipo"] }}</div>
+    	<div>Ubicacion: {{ escultura["ubicacion"] }}</div>
+    	<div>Material: {{ escultura["material"] }}</div>
+    	<div>Autor: {{ escultura["autor"] }}</div>
+    	<div>Año: {{ escultura["anio"] }}</div>
+    	<div>Latitud: {{ escultura["mapa"]["lat"] }}</div>
+    	<div>Longitud: {{ escultura["mapa"]["long"] }}</div>
+    	Termina
+    	<br></br>
     {% endfor %}	
 </div>
 {% endblock %}

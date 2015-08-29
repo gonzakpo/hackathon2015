@@ -14,20 +14,26 @@ class DefaultController extends Controller
 	/**
      * @Route("/", name="homepage")
      */
-    public function indexAction()
-    {
-    	$esculturas = $this->traerNodos();
-    	
-    	return $this->render('AppBundle::Puzzle/puzzle.html.twig', array(
-            	'esculturas' => $esculturas,
-            )
-        );
-    }
+  public function indexAction()
+  {
+    return $this->render('AppBundle::Puzzle/puzzle.html.twig');
+  }
 
+  /**
+   * @Route("/esculturas", name="esculturas")
+   */
+  public function esculturasAction()
+  {
+    $esculturas = $this->traerNodos();
 
+    return $this->render('AppBundle::Esculturas/esculturas.html.twig', array(
+        'esculturas' => $esculturas,
+      )
+    );
+  }
 
     public function traerNodos(){
-    	$url = 'http://www.resistenciarte.org/api/v1/node?pagesize=10';
+    	$url = 'http://www.resistenciarte.org/api/v1/node?pagesize=20';
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/json')); // Assuming you're requesting JSON

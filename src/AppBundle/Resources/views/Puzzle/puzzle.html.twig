@@ -6,44 +6,18 @@
             <div class="card-content white-text">
                 <span class="card-title">Card Title</span>
                 <p>
-                    <img id="rompecabezas" onLoad="snapfit.add(this);" width="163" height="310" src="img/pajaro.jpg">
+                    <img id="img" data-url="{{ path('esculturas') }}" width="163" height="310" src="{{ escultura.url }}">
                 </p>
             </div>
             <div class="card-action">
-                <a href="#" id="resolve">Resolver</a>
-                <a href="#">This is a link</a>
+                <a data-img="img" id="resolve" class="waves-effect waves-light btn">
+                    <i class="material-icons right"></i>Resolver
+                </a>
             </div>
         </div>
     </div>
 </div>
     <script src="vendor/snapfit.js"></script>
-
-    <script>
-        (function(){
-            var image = $('#rompecabezas');
-            var options = {
-                aopacity:0.0001,
-                mixed:true,
-                simple: true
-            };
-
-            snapfit.add(image, options);
-
-            $('#resolve').click(function(){
-                snapfit.solve(image);
-            });
-            ajax();
-
-        })();
-
-        function ajax(){
-            $.ajax({
-                type: 'GET',
-                url: 'http://resistenciarte.org/api/v1/node?page=40',
-                dataType: 'json',
-                crossDomain: true,
-            });
-        }
-
+    <script src="js/rompecabezas.js"></script>
     </script>
 {% endblock %}

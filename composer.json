@@ -21,6 +21,8 @@
         "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
         "incenteev/composer-parameter-handler": "~2.0",
         "mwsimple/admin-crud": "3.0.*@dev",
+        "friendsofsymfony/user-bundle": "~1.3",
+        "hwi/oauth-bundle": "0.4.*@dev",
         "leaseweb/api-caller-bundle": "*",
         "willdurand/hateoas": "@stable",
         "raulfraile/ladybug-bundle": "v1.0.6"

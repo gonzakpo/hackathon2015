@@ -1,0 +1,9 @@
+{% extends 'MWSimpleAdminCrudBundle::layout.html.twig' %}
+
+{% block title %}
+	Facebook User
+{% endblock %}
+
+{% block page %}
+	<a class="btn btn-facebook" href="{{ path('hwi_oauth_service_redirect', {'service': 'facebook' }) }}" alt="{{ 'login.facebook'|trans({}, 'MWSBundle') }}">{{ 'login.facebook'|trans({}, 'MWSBundle') }} <img src="{{ asset('bundles/sistemamws/img/social-icons/icono-facebook.png') }}" /></a>
+{% endblock %}

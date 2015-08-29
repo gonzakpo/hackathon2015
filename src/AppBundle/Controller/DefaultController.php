@@ -16,7 +16,13 @@ class DefaultController extends Controller
      */
   public function indexAction()
   {
-    return $this->render('AppBundle::Puzzle/puzzle.html.twig');
+  	$esculturas = $this->traerNodos();
+  	$escultura = $esculturas[rand(0, 50)];
+  	
+    return $this->render('AppBundle::Puzzle/puzzle.html.twig', array(
+        'escultura' => $escultura,
+      )
+    );
   }
 
   /**
@@ -33,7 +39,7 @@ class DefaultController extends Controller
   }
 
     public function traerNodos(){
-    	$url = 'http://www.resistenciarte.org/api/v1/node?pagesize=20';
+    	$url = 'http://www.resistenciarte.org/api/v1/node?pagesize=50';
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/json')); // Assuming you're requesting JSON

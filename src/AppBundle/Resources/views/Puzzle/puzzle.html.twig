@@ -6,7 +6,7 @@
             <div class="card-content white-text">
                 <span class="card-title">Card Title</span>
                 <p>
-                    <img id="img" data-url="{{ path('esculturas') }}" width="163" height="310" src="{{ escultura.url }}">
+                    <img id="img" data-url="{{ path('esculturas') }}" width="163" height="310" src="{{ escultura.imgUrl }}">
                 </p>
             </div>
             <div class="card-action">
@@ -17,7 +17,6 @@
         </div>
     </div>
 </div>
-    <script src="vendor/snapfit.js"></script>
-    <script src="js/rompecabezas.js"></script>
-    </script>
-{% endblock %}
+    <script src="{{ asset('js/rompecabezas.js') }}"></script>
+    <script src="{{ asset('vendor/snapfit.js') }}"></script>
+  {% endblock %}

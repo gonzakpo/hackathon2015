@@ -19,7 +19,7 @@ class DefaultController extends Controller
   	//lamo a la funcion traerNodos
   	$esculturas = $this->traerNodos();
   	//un numero random
-  	$escultura = $esculturas[rand(0, 5)];
+    $escultura = $esculturas[rand(0, 5)];
 
     return $this->render('AppBundle::Puzzle/puzzle.html.twig', array(
         'escultura' => $escultura,

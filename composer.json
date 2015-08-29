@@ -20,7 +20,10 @@
         "sensio/distribution-bundle": "~4.0",
         "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
         "incenteev/composer-parameter-handler": "~2.0",
-        "mwsimple/admin-crud": "3.0.*@dev"
+        "mwsimple/admin-crud": "3.0.*@dev",
+        "leaseweb/api-caller-bundle": "*",
+        "willdurand/hateoas": "@stable",
+        "raulfraile/ladybug-bundle": "v1.0.6"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

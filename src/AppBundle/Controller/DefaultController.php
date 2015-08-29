@@ -43,7 +43,7 @@ class DefaultController extends Controller
 
     public function traerNodos(){
     	//segun la url traigo 50 nodos
-    	$url = 'http://www.resistenciarte.org/api/v1/node?pagesize=50';
+    	$url = 'http://www.resistenciarte.org/api/v1/node?pagesize=20';
 		//Hago una request de la url
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);

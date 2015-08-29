@@ -16,9 +16,11 @@ class DefaultController extends Controller
      */
   public function indexAction()
   {
+  	//lamo a la funcion traerNodos
   	$esculturas = $this->traerNodos();
+  	//un numero random
   	$escultura = $esculturas[rand(0, 50)];
-  	
+
     return $this->render('AppBundle::Puzzle/puzzle.html.twig', array(
         'escultura' => $escultura,
       )
@@ -30,6 +32,7 @@ class DefaultController extends Controller
    */
   public function esculturasAction()
   {
+  	//traigo todas las esculturas
     $esculturas = $this->traerNodos();
 
     return $this->render('AppBundle::Esculturas/esculturas.html.twig', array(
@@ -39,17 +42,23 @@ class DefaultController extends Controller
   }
 
     public function traerNodos(){
+    	//segun la url traigo 50 nodos
     	$url = 'http://www.resistenciarte.org/api/v1/node?pagesize=50';
+		//Hago una request de la url
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/json')); // Assuming you're requesting JSON
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		$response = curl_exec($ch);
     	$data = json_decode($response, true);
+    	//fin de la request me devuelve un array
     	$arrayEsculturas = array();
+    	//voy a crear un arreglo de esculturas
     	foreach ($data as $key => $nodo) {
+    		//pregunto si el nodo es de tipo esculturas
+    		//puede haber autores o otros tipos
     		if ($nodo["type"] == "escultura"){
-    			
+    			//seteo las variables en caso de que tengo algo null
     			$titulo = "no dispone titulo";
     			$tipo = "desconocido";
     			$ubicacion = "desconocida";
@@ -93,7 +102,8 @@ http://www.resistenciarte.org/sites/resistenciarte.org/files/" . $escultura["fie
 
     	return $arrayEsculturas;
     }
-
+    //una funcion para traer toda la info de la escultura
+    //segun su uid con una uri propia
     public function traerEscultura($url){
 
 		$ch = curl_init();
@@ -106,7 +116,8 @@ http://www.resistenciarte.org/sites/resistenciarte.org/files/" . $escultura["fie
     	
     	return $data;
     }
-
+    //una funcion para traer info desde los tid
+    //ejemplo autores, tipos, materiales
     public function infoTid($tid){
 
     	$url = "http://www.resistenciarte.org/api/v1/taxonomy_term/" . $tid;

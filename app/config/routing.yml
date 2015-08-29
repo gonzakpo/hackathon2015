@@ -6,3 +6,4 @@ mw_simple_admin_crud:
     resource: "@MWSimpleAdminCrudBundle/Controller/"
     type:     annotation
     prefix:   /admin
+

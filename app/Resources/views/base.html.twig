@@ -3,11 +3,21 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            {% stylesheets filter="sass"
+            '@AppBundle/Resources/public/materialize-src/sass/materialize.scss' %}
+            <link rel="stylesheet" href="{{ asset_url }}"/>
+            {% endstylesheets %}
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+            {% block body %}{% endblock %}
+        {% block javascripts %}
+            {% javascripts
+            '@AppBundle/Resources/public/libs/jquery-1.11.3.min.js'
+            '@AppBundle/Resources/public/materialize-src/js/*'
+            %}{% endjavascripts %}
+        {% endblock %}
     </body>
 </html>

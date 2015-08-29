@@ -30,10 +30,10 @@ class DefaultController extends Controller
   /**
    * @Route("/esculturas", name="esculturas")
    */
-  public function esculturasAction(20)
+  public function esculturasAction()
   {
     //traigo todas las esculturas
-    $esculturas = $this->traerNodos();
+    $esculturas = $this->traerNodos(20);
 
     return $this->render('AppBundle::Esculturas/esculturas.html.twig', array(
         'esculturas' => $esculturas,

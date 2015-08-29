@@ -16,6 +16,26 @@
         {% endblock %}
     </head>
     <body class="red lighten-4">
+    {% block header %}
+        <header>
+            <a class="logo">
+                <img src=""/>
+            </a>
+            <ul class="menu">
+                <li>Home</li>
+                <li>Esculturas</li>
+                <li>Ayuda</li>
+            </ul>
+        </header>
+    {% endblock %}
             {% block body %}{% endblock %}
+    {% block footer %}
+        <div class="footer-copyright">
+            <div class="container">
+                © 2014 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    {% endblock %}
     </body>
 </html>

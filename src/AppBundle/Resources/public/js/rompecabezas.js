@@ -1,6 +1,6 @@
 (function(){
 	var image = document.getElementById('img');
-	var urlRedirect = "http://stackoverflow.com";
+	var urlRedirect = image.data('url');
 	var options = {
 		aopacity:0.0001, 
 		mixed:true,

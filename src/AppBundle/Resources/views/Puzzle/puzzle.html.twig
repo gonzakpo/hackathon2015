@@ -1,5 +1,23 @@
 {% extends '::base.html.twig' %}
 {% block body %}
+<<<<<<< HEAD
+<div class="container puzzle">
+    {% for escultura in esculturas %}
+    	{#{ escultura|ladybug_dump }#}
+    	Empieza
+    	<div>Titulo: {{ escultura["titulo"] }}</div>
+    	<div>Imagen: {{ escultura["imgUrl"] }}</div>
+    	<div>Tipo: {{ escultura["tipo"] }}</div>
+    	<div>Ubicacion: {{ escultura["ubicacion"] }}</div>
+    	<div>Material: {{ escultura["material"] }}</div>
+    	<div>Autor: {{ escultura["autor"] }}</div>
+    	<div>Año: {{ escultura["anio"] }}</div>
+    	<div>Latitud: {{ escultura["mapa"]["lat"] }}</div>
+    	<div>Longitud: {{ escultura["mapa"]["long"] }}</div>
+    	Termina
+    	<br></br>
+    {% endfor %}	
+=======
 <div class="container puzzle darken-1">
     <div class="row purple lighten-3 darken-1">
         <div class="card purple lighten-3  darken-1">
@@ -15,6 +33,7 @@
             </div>
         </div>
     </div>
+>>>>>>> 99b596247fb580f053944bac55f5f7f55ec1266e
 </div>
     <script src="vendor/snapfit.js"></script>
 

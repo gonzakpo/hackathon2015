@@ -5,16 +5,20 @@
         <div class="row">
         {% for escultura in esculturas%}
             <div class="col s12 m6">
+            <span class="card-title">Titulo: {{ escultura["titulo"] }}</span>
                 <div class="card blue-grey darken-1">
                     <div class="card-image">
                         <img src="{{ escultura['imgUrl'] }}">
                     </div>
                     <div class="card-content white-text">
-                        <span class="card-title">Titulo: {{ escultura["titulo"] }}</span>
                         <span class="card-title">Tipo: {{ escultura["tipo"] }}</span>
+                        <br>
                         <span class="card-title">Ubicacion: {{ escultura["ubicacion"] }}</span>
+                        <br>
                         <span class="card-title">Material: {{ escultura["material"] }}</span>
+                        <br>
                         <span class="card-title">Autor: {{ escultura["autor"] }}</span>
+                        <br>
                         <span class="card-title">{{ escultura["anio"] }}</span>
                     </div>
                     <div class="card-action">

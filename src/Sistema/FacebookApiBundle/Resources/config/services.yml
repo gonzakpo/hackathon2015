@@ -1,0 +1,14 @@
+parameters:
+    mws_user_provider.class: Sistema\FacebookApiBundle\Security\Core\User\FOSUBUserProvider
+
+services:
+    mws_facebook_api:
+        class: Sistema\FacebookApiBundle\Services\FacebookApi
+        arguments:
+            - "@service_container"
+            - "@doctrine.orm.entity_manager"
+            - "@security.context"
+#provider security facebook
+    mws_user_provider:
+        class: %mws_user_provider.class%
+        arguments: [@fos_user.user_manager, {facebook: facebookId}]

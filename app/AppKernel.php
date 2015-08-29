@@ -22,6 +22,10 @@ class AppKernel extends Kernel
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Lexik\Bundle\FormFilterBundle\LexikFormFilterBundle(),
             new Sistema\HackBundle\SistemaHackBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
+            new Sistema\UserBundle\SistemaUserBundle(),
+            new Sistema\FacebookApiBundle\SistemaFacebookApiBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

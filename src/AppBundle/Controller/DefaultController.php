@@ -17,7 +17,7 @@ class DefaultController extends Controller
   public function indexAction()
   {
     //lamo a la funcion traerNodos
-    $esculturas = $this->traerNodos();
+    $esculturas = $this->traerNodos(5);
     //un numero random
     $escultura = $esculturas[0];
 
@@ -30,7 +30,7 @@ class DefaultController extends Controller
   /**
    * @Route("/esculturas", name="esculturas")
    */
-  public function esculturasAction()
+  public function esculturasAction(20)
   {
     //traigo todas las esculturas
     $esculturas = $this->traerNodos();
@@ -41,9 +41,9 @@ class DefaultController extends Controller
     );
   }
 
-    public function traerNodos(){
+    public function traerNodos($paggg){
         //segun la url traigo 50 nodos
-        $url = 'http://www.resistenciarte.org/api/v1/node?pagesize=5';
+        $url = 'http://www.resistenciarte.org/api/v1/node?pagesize='.$paggg;
         //Hago una request de la url
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
